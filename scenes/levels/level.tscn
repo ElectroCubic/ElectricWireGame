@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkp81tnthahd7"]
+
+[ext_resource type="PackedScene" uid="uid://bdtdild3l7otx" path="res://scenes/tiles/wire_tile.tscn" id="1_4rgxe"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ddvnq"]
+resource_name = "WireTile"
+scenes/1/scene = ExtResource("1_4rgxe")
+
+[sub_resource type="TileSet" id="TileSet_7k0v2"]
+sources/0 = SubResource("TileSetScenesCollectionSource_ddvnq")
+
+[node name="level" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(576, 324)
+zoom = Vector2(5, 5)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_7k0v2")
+format = 2
+layer_0/tile_data = PackedInt32Array(1245218, 0, 65536, 1179683, 0, 65536, 1179685, 0, 65536, 1245221, 0, 65536, 1179681, 0, 65536, 1310755, 0, 65536, 1376290, 0, 65536, 1376292, 0, 65536, 1376293, 0, 65536, 1179684, 0, 65536, 1310756, 0, 65536, 1245217, 0, 65536, 1310753, 0, 65536, 1245219, 0, 65536, 1376289, 0, 65536)
+
+[connection signal="input_event" from="TileMap/@Area2D@42821" to="TileMap/@Area2D@42821" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@Area2D@42822" to="TileMap/@Area2D@42822" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@Area2D@42826" to="TileMap/@Area2D@42826" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@Area2D@42827" to="TileMap/@Area2D@42827" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@Area2D@42828" to="TileMap/@Area2D@42828" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@Area2D@42831" to="TileMap/@Area2D@42831" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@Area2D@42836" to="TileMap/@Area2D@42836" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@Area2D@42838" to="TileMap/@Area2D@42838" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@Area2D@42839" to="TileMap/@Area2D@42839" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/WireTile" to="TileMap/WireTile" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@Area2D@42840" to="TileMap/@Area2D@42840" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@Area2D@42841" to="TileMap/@Area2D@42841" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@Area2D@42842" to="TileMap/@Area2D@42842" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@Area2D@42843" to="TileMap/@Area2D@42843" method="_on_input_event"]
+[connection signal="input_event" from="TileMap/@Area2D@42844" to="TileMap/@Area2D@42844" method="_on_input_event"]

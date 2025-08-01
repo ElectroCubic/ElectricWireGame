@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdtdild3l7otx"]
+
+[ext_resource type="PackedScene" uid="uid://dwkmp0246n461" path="res://scenes/tiles/detector.tscn" id="1_ild8j"]
+[ext_resource type="Script" path="res://scenes/tiles/wire_tile.gd" id="1_jes2b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55o3v"]
+size = Vector2(16, 16)
+
+[node name="WireTile" type="Area2D" node_paths=PackedStringArray("top_detector", "right_detector", "bottom_detector", "left_detector")]
+collision_mask = 0
+script = ExtResource("1_jes2b")
+rotation_time = 0.5
+top_detector = NodePath("TopDetector")
+right_detector = NodePath("RightDetector")
+bottom_detector = NodePath("BottomDetector")
+left_detector = NodePath("LeftDetector")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_55o3v")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.85, 0.155833, 0.017, 1)
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[node name="TopDetector" parent="." instance=ExtResource("1_ild8j")]
+position = Vector2(0, -8)
+orientation = "Top"
+
+[node name="RightDetector" parent="." instance=ExtResource("1_ild8j")]
+position = Vector2(8, 0)
+orientation = "Right"
+
+[node name="BottomDetector" parent="." instance=ExtResource("1_ild8j")]
+position = Vector2(0, 8)
+orientation = "Bottom"
+
+[node name="LeftDetector" parent="." instance=ExtResource("1_ild8j")]
+position = Vector2(-8, 0)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
